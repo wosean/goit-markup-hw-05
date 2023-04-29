@@ -683,8 +683,8 @@ img {
 .modal-btn{
 
   position: absolute;
-  top: 24px;
-  right: 24px;
+  top: 32px;
+  right: 32px;
 
   display: flex;
   align-items: center;
@@ -693,39 +693,29 @@ img {
   height: 24px;
 
   border-radius: 50%;
-  background-color: #E7E9FC;
+  color: var(--color-navy-blue);
+  background-color: var(--color-cornflower);
+
   border: 1px solid rgba(0, 0, 0, 0.1);
 
   padding: 0;
   cursor: pointer;
+
+  transition-property: border, color, box-shadow, background-color;
+  transition-duration: 2500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-          
+
 .modal-btn:hover,
 .modal-btn:focus {
-  background-color: #404BBF;
-  color: #FFFFFF;
+  color: var(--color-white);
+  background-color: var(--color-ocean);
 }
 
-/*
-.modal-btn {
-  position: absolute;
-  top: -15px;
-  right: -15px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-
-  color: var(--secondary-bg-cl);
-
-  background-color: #e7e9fc;
-  border-radius: 50%;
-
-  border: none;
-  cursor: pointer;
+.modal-btn:hover .modal-icon {
+  fill: #FFFFFF;
 }
+
 
   /* ==========portfolio=========== */
 
@@ -831,17 +821,6 @@ img {
     padding: 96px 0 120px;
   }
 
-  .filter-button {
-    font-family: var(--secondery-font);
-    font-family: inherit;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.5;
-
-    letter-spacing: 0.04em;
-    background-color: var(--color-white);
-  }
-
   .filter-btn {
     display: flex;
     flex-direction: row;
@@ -855,8 +834,8 @@ img {
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.04em;
+
     color: var(--color-iris);
-    letter-spacing: 0.04em;
     background-color: var(--color-cloud);
     cursor: pointer;
     border: 1px solid var(--color-cornflower);
@@ -867,12 +846,10 @@ img {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .filter-btn:active {
+   .filter-btn:active {
     color: var(--color-iris);
     background-color: var(--color-cornflower);
-  }
-
-
+  } 
 
   .filter-btn:hover,
   .filter-btn:focus {
@@ -901,15 +878,19 @@ img {
   font-size: 20px;
   line-height: 1.2;
   letter-spacing: 0.02em;
-  color: var(--dark-color);
+  color: var(--color-navy-blue);
+
+  text-decoration: none;
 }
 
 .portfolio-text {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  color: var(--dark-color);
+  color: var(--color-slate);
+  
   margin-bottom: 8px;
+  text-decoration: none;
 }
 
 .list.cards {
@@ -937,16 +918,59 @@ transition-duration: 2500ms;
 transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-
-
 .card-categories {
   padding: 32px 16px;
   border: 1px solid #e7e9fc;
   border-top: none;
 }
 
+/* portfolio-overlay */
 
-  /* footer portfolio */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 360px;
+  height: 300px;
+
+  margin: auto;
+    
+  background-color: var(--color-iris);
+    
+  transform: translateY(100%);
+  transition: transform 250ms ease-in-out;
+}
+
+.overlay-label{
+  position: absolute;
+  width: 296px;
+  height: 96px;
+  left: 32px;
+  top: 40px;
+  
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  
+  color: #F4F4FD;
+    
+}
+
+.card-link:hover .overlay {
+  transform: translateY(0);
+}
+
+.card-link {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+    /* footer portfolio */
 
 .footer-container {
   display: flex;
