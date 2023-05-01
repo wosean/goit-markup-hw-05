@@ -138,15 +138,19 @@ img {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+.nav-link.current {
+  color: var(--color-ocean);
+}
 
 /* .nav-link:hover,
 .nav-link:focus {
   color: var(--color-ocean);
-} */
+ }  не працює?*/ 
+
 .nav .link:hover,
 .nav .link:focus {
   color: var(--color-ocean);
-}
+} 
 
 .nav .list {
   display: flex;
@@ -170,7 +174,7 @@ img {
 
 .nav .link.current {
   color: var(--color-ocean);
-}
+} 
 
 .nav-link.current::after,
 .nav-link:hover::after,
@@ -545,7 +549,7 @@ img {
   /* footer */
 
 .logotype {
-  gap: 120px;
+  margin-right: 120px;
 }
 
 .footer {
@@ -687,8 +691,8 @@ img {
 .modal-btn{
 
   position: absolute;
-  top: 32px;
-  right: 32px;
+  top: 24px;
+  right: 24px;
 
   display: flex;
   align-items: center;
@@ -976,8 +980,6 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
 .footer-container {
   display: flex;
-  gap: 120px;
-  /* margin-right: 120px; */
   align-items: baseline;
 }
 
